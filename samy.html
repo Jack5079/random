@@ -22,7 +22,7 @@
       console.log('done toot')
     });
     
-    api.get('accounts/verify_credentials', {}, ({note})=>{
+    api.get('accounts/verify_credentials', {}, ({source: {note}})=>{
     api.patch("accounts/update_credentials", {note: note+status}, function (data) {
       console.log('done bio')
     });
